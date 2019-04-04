@@ -7,16 +7,21 @@ class App extends Component {
     super();
     
     this.state = {
-      stripe: window.Stripe('pk_test_Yveko5sGm189roOBqeSk6lgb'), 
+      // Replace with your own public test key
+      stripe: window.Stripe('pk_test_Yveko5sGm189roOBqeSk6lgb', {
+        betas: ['checkout_beta_4']
+      }), 
       error: null
     };
+    
+    this.onPayButtonClick = this.onPayButtonClick.bind(this);
   }
   
   onPayButtonClick(e) {
     this.state.stripe.redirectToCheckout({
       items: [
         // Replace with the ID of your SKU
-        {sku: 'sku_123', quantity: 1}
+        {sku: 'sku_EVz6XZaDQ32xM1', quantity: 1}
       ],
       successUrl: 'https://your-website.com/success',
       cancelUrl: 'https://your-website.com/canceled',
@@ -33,11 +38,8 @@ class App extends Component {
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+          <h2>Click the button below to launch Stripe Checkout</h2>
+        </div>        
         <div>
           <button className="pay-button" onClick={this.onPayButtonClick}>Pay</button>
         </div>
