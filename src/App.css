@@ -24,7 +24,7 @@
 }
 
 button {
-  float: left;
+  margin: 0 auto;
   display: block;
   background: #34D08C;
   color: white;
@@ -33,10 +33,11 @@ button {
   margin-top: 20px;
   font-size: 19px;
   font-weight: 400;
-  width: 100%;
+  width: 50%;
   height: 47px;
   line-height: 45px;
   outline: none;
+  cursor: pointer;
 }
 
 button:focus {
