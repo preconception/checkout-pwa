@@ -6,15 +6,19 @@ class App extends Component {
   constructor() {
     super();
     
-    this.state = {
-      // Replace with your own public test key
-      stripe: window.Stripe('pk_test_Yveko5sGm189roOBqeSk6lgb', {
-        betas: ['checkout_beta_4']
-      }), 
+    this.state = {      
+      stripe: null,
       error: null
     };
     
     this.onPayButtonClick = this.onPayButtonClick.bind(this);
+  }
+  
+  componentDidMount() {
+     this.setState({
+       // Replace with your own public test key
+       stripe: window.Stripe('pk_test_Yveko5sGm189roOBqeSk6lgb')
+     });
   }
   
   onPayButtonClick(e) {
