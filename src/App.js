@@ -28,8 +28,8 @@ class App extends Component {
           // Replace with the ID of your SKU
           { sku: "sku_EVz6XZaDQ32xM1", quantity: 1 }
         ],
-        successUrl: "https://",
-        cancelUrl: "https://your-website.com/canceled"
+        successUrl: "https://pwa-checkout.netlify.com",
+        cancelUrl: "https://pwa-checkout.netlify.com"
       })
       .then(function(result) {
         // Display result.error.message to your customer
